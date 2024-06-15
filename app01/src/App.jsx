@@ -1,24 +1,14 @@
 import React, { useState } from 'react'
+import AppKey from './assets/AppKey'
 
 export default function App() {
+const [show, setShow] = useState(true)
 
-   const [number, setNumber] = useState(0)
 
-   const increment = (n)=>{
-     setNumber(number + n)
-     console.log(number)
-   }
-
-   const Delete = (n)=>{
-     setNumber(number - n)
-     console.log(number)
-   }
   return (
     <div>
-      {number}
-      <button onClick={()=>increment(10)}>Add</button>
-      <button onClick={()=>setNumber(0)}>Resrt</button>
-      <button onClick={()=>Delete(10)}>Delete</button>
+      <button onClick={()=>setShow(!show)} className='btn btn-warning'>{show? "Hiedin" : "Shoe"}</button>
+      {show && <AppKey/>}
     </div>
   )
 }
